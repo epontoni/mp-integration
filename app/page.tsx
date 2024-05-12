@@ -19,13 +19,12 @@ export default async function Home() {
       ],
       back_urls: {
         success:
-          "mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
+          "https://mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
         failure:
-          "mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
-        pending:
-          "mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
+          "https://mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
       },
       auto_return: "approved",
+      binary_mode: true, // aprobados o rechazados.
     },
   });
 
