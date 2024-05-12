@@ -18,9 +18,12 @@ export default async function Home() {
         },
       ],
       back_urls: {
-        success: "https://example.com/success",
-        failure: "https://example.com/failure",
-        pending: "https://example.com/pending",
+        success:
+          "mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
+        failure:
+          "mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
+        pending:
+          "mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
       },
       auto_return: "approved",
     },
