@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
   const grant_type = "authorization_code";
 
   // Auth URL
-  const auth_url = `https://api.mercadopago.com/oauth/token?client_id=${client_id}&client_secret=${client_secret}&code=${code}&grant_type=${grant_type}&redirect_uri=${redirect_uri}`;
+  const auth_url = `https://api.mercadopago.com/oauth/token?client_id=${client_id}&client_secret=${client_secret}&code=${code}&grant_type=${grant_type}&redirect_uri=${redirect_uri}&test_token=true`;
 
   // Fetch the access token
   const response = await fetch(auth_url, {

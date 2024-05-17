@@ -1,6 +1,9 @@
 import WalletButton from "@/components/wallet-button";
 import { MercadoPagoConfig, Preference } from "mercadopago"; // SDK de Mercado Pago
 
+import { initMercadoPago } from "@mercadopago/sdk-react";
+initMercadoPago("TEST-bce5c87b-601f-4b84-a229-51e8689e326a"); // YOUR_PUBLIC_KEY
+
 export default async function Home() {
   const client = new MercadoPagoConfig({
     accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN!, // Cambiar por el access_token de la cuenta vendedor obtenido en /api/oauth/token)
