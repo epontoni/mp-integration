@@ -41,17 +41,14 @@ export async function POST(request: NextRequest) {
   if (v1 !== hmac) {
     console.log("[ERROR]", "Invalid signature");
     // return Response.json({ success: false });
-    return NextResponse.json({ error: 'Invalid signature' }, { status: 500 });
+    return NextResponse.json({ error: "Invalid signature" }, { status: 500 });
   }
 
   console.log("[SUCCESS]", "Signature is valid!!!");
 
   const payment = await new Payment(client).get({ id: body.data.id });
 
-
   console.log("[PAYMENT]", payment);
-  
 
-  
   return NextResponse.json({ success: true }, { status: 200 });
 }
