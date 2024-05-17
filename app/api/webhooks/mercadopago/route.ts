@@ -44,11 +44,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid signature" }, { status: 500 });
   }
 
-  console.log("[SUCCESS]", "Signature is valid!!!");
+  console.log("[SUCCESS]", "Signature is valid!!!", body.data.id);
 
-  const payment = await new Payment(client).get({ id: body.data.id });
+  //const payment = await new Payment(client).get({ id: body.data.id });
 
-  console.log("[PAYMENT]", payment);
+  //console.log("[PAYMENT]", payment);
 
   return NextResponse.json({ success: true }, { status: 200 });
 }

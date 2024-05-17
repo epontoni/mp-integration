@@ -74,10 +74,8 @@ const preference = await new Preference(client).create({
       },
     ],
     back_urls: {
-      success:
-        "https://mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
-      failure:
-        "https://mp-payment-integration.vercel.app/api/webhooks/mercadopago/notifications",
+      success: `${process.env.NEXT_PUBLIC_APP_URL}/api/webhooks/mercadopago/notifications`,
+      failure: `${process.env.NEXT_PUBLIC_APP_URL}/api/webhooks/mercadopago/notifications`,
     },
     auto_return: "approved",
     binary_mode: true, // aprobados o rechazados.

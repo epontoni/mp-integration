@@ -29,7 +29,7 @@ export default async function Home() {
       auto_return: "approved",
       binary_mode: true, // aprobados o rechazados.
       marketplace_fee: 1,
-      marketplace: "MP-MKT-1647545615454062",
+      marketplace: `MP-MKT-${process.env.NEXT_PUBLIC_MERCADOPAGO_CLIENT_ID}`,
     },
   });
 
@@ -39,7 +39,7 @@ export default async function Home() {
       <p>
         <a
           className="font-bold text-blue-500 hover:underline"
-          href={`https://auth.mercadopago.com.ar/authorization?client_id=${"1647545615454062"}&response_type=code&platform_id=mp&redirect_uri=${"https://judges-bi-allowance-phone.trycloudflare.com/api/oauth/token"}`}
+          href={`https://auth.mercadopago.com.ar/authorization?client_id=${process.env.NEXT_PUBLIC_MERCADOPAGO_CLIENT_ID}&response_type=code&platform_id=mp&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/api/oauth/token`}
           target="_blank"
         >
           Autorizar cobros
